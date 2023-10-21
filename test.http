@@ -1,0 +1,120 @@
+GET http://localhost:5050
+
+####
+GET http://localhost:5050/posts/byId/65259d29a1222281c432a4e5
+
+####
+
+GET http://localhost:5050/posts?page=1&pageSize=3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21lIjoiTWFyaW8iLCJjb2dub21lIjoiUm9zc2kiLCJkYXRhRGlOYXNjaXRhIjoiMTk4Ny0wNC0xMSIsImVtYWlsIjoiZXZlcnlib2R5QGdtYWlsLmNvbSIsImlhdCI6MTY5NzM2MTU4OCwiZXhwIjoxNjk3MzYxNjEyfQ.hJWLXEhY-q6lGM7dACQhS0weEijLfIoYU50Yres3fhk
+
+####
+POST http://localhost:5050/posts/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "category": "Learnings and Tips",
+    "title": "Le ultime uscite",
+    "readTime": {
+        "value": 1.30,
+        "unit": "hours"
+    },
+    "author": "653211aeae36aee33db5ea10",
+    "content": "WOWOWOWOW"
+}
+
+####
+PATCH http://localhost:5050/posts/update/6529929b42209141f05201ad
+Content-Type: application/json
+
+{
+    "cover":"https://striveschool.ghost.io/content/images/2020/11/tips02.png",
+    "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+}
+
+####
+DELETE http://localhost:5050/posts/delete/651706bb28ac97fe58a536a7
+
+####
+PATCH http://localhost:5050/posts/byId/65259d29a1222281c432a4e5/cover HTTP/1.1
+Content-Type: application/json
+
+
+####
+POST http://localhost:5050/authors/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome":"Mario",
+    "cognome":"Rossi",
+    "email": "everybody@gmail.com",
+    "password": "Lamiapassword"
+}
+
+####
+POST http://localhost:5050/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "everybody@gmail.com",
+    "password": "Lamiapassword"
+}
+
+####
+
+GET http://localhost:5050/authors
+
+####
+
+GET http://localhost:5050/authors/651fca8a575b1caf36677c94
+
+####
+
+GET http://localhost:5050/authors/651fca8a575b1caf36677c94/posts
+
+####
+PUT http://localhost:5050/authors/update/651fca8a575b1caf36677c94 HTTP/1.1
+Content-Type: application/json
+
+{
+    "avatar": "https://picsum.photos/201/301"
+}
+
+####
+DELETE  http://localhost:5050/authors/delete/65170b8fe31dc359439b15ad 
+
+####
+GET http://localhost:5050/posts/byId/65204fb5c09140c9c1ee9772/comments
+
+####
+GET http://localhost:5050/posts/byId/65204fb5c09140c9c1ee9772/comments/6527b3f2d75b0c20e77f917c
+
+####
+POST http://localhost:5050/posts/byId/652e4d4e621879970fe87fe7 HTTP/1.1
+Content-Type: application/json
+
+{
+    "Comment": "Incredibileeeeeee",
+    "rate":"10"
+}
+
+####
+DELETE http://localhost:5050/posts/byId/65204fb5c09140c9c1ee9772/comments/6527b3f2d75b0c20e77f917c
+
+####
+PUT http://localhost:5050/posts/byId/65204fb5c09140c9c1ee9772/comments/6527b61bace26f6246d721b2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "Comment": "Assurdo",
+    "rate": "100"
+}
+
+####
+POST http://localhost:5050/send-email HTTP/1.1
+Content-Type: application/json
+
+{
+    "subject": "Incredibileeeeeee",
+    "text":"10"
+}
