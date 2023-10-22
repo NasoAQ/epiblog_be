@@ -73,11 +73,12 @@ GET http://localhost:5050/authors/651fca8a575b1caf36677c94
 GET http://localhost:5050/authors/651fca8a575b1caf36677c94/posts
 
 ####
-PUT http://localhost:5050/authors/update/651fca8a575b1caf36677c94 HTTP/1.1
+PUT http://localhost:5050/authors/update/6532cd88fe8d8ff4502777b3 HTTP/1.1
 Content-Type: application/json
 
 {
-    "avatar": "https://picsum.photos/201/301"
+    "avatar": "https://i.pinimg.com/474x/8b/39/09/8b390930f9f8b93dd49d36e32876bd96--avatar-app.jpg",
+    "email": "ale@epicode.com"
 }
 
 ####
